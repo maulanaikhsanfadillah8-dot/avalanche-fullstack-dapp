@@ -17,7 +17,7 @@ Pada akhir sesi Day 1, peserta mampu:
 
 ## 🧩 Studi Kasus Day 1
 
-### Avalanche Simple Full Stack dApp
+### Avalanche Simple Full Stack dApp - Fundamental Layer
 
 Hari pertama difokuskan pada **fondasi dApp**, yaitu:
 
@@ -70,7 +70,7 @@ dApp (Decentralized Application) terdiri dari:
 
 #### Mental Model dApp (Penting)
 
-```
+```bash
 User
   ↓
 Frontend (HTML / JS)
@@ -84,7 +84,6 @@ Blockchain (Avalanche C-Chain)
 
 - Frontend **tidak langsung** mengirim transaksi ke blockchain
 - Wallet bertugas:
-
   - Menyimpan private key
   - Menandatangani transaksi
   - Menjadi bridge ke blockchain

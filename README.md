@@ -85,13 +85,13 @@ avalanche-fullstack-dapp/
 
 ## 🗓️ Course Structure (5 Hari)
 
-| Hari  | Fokus                  | Output                       |
-| ----- | ---------------------- | ---------------------------- |
-| Day 1 | Blockchain & Avalanche | Wallet connect ke dApp       |
-| Day 2 | Smart Contract         | Contract deploy ke Avalanche |
-| Day 3 | Frontend dApp          | Interaksi smart contract     |
-| Day 4 | Backend API            | Simpan data off-chain        |
-| Day 5 | Integration & Deploy   | Full stack dApp live         |
+| Hari  | Fokus                  | Output                                    |
+| ----- | ---------------------- | ----------------------------------------- |
+| Day 1 | Blockchain & Avalanche | Wallet connect ke dApp                    |
+| Day 2 | Smart Contract         | Contract deploy ke Avalanche Fuji Testnet |
+| Day 3 | Frontend dApp          | Interaksi smart contract                  |
+| Day 4 | Backend API            | Simpan data off-chain                     |
+| Day 5 | Integration & Deploy   | Full stack dApp live                      |
 
 📘 Modul lengkap tersedia di folder [`/docs`](./docs)
 
@@ -194,13 +194,13 @@ Detail deployment dijelaskan pada **Day 5 module**.
 
 ## 📘 Learning Modules
 
-| Module | Link                   |
-| ------ | ---------------------- |
-| Day 1  | `docs/day-1/README.md` |
-| Day 2  | `docs/day-2/README.md` |
-| Day 3  | `docs/day-3/README.md` |
-| Day 4  | `docs/day-4/README.md` |
-| Day 5  | `docs/day-5/README.md` |
+| Module | Link                                             |
+| ------ | ------------------------------------------------ |
+| Day 1  | [`docs/day-1/README.md`](./docs/day-1/README.md) |
+| Day 2  | [`docs/day-2/README.md`](./docs/day-2/README.md) |
+| Day 3  | [`docs/day-3/README.md`](./docs/day-3/README.md) |
+| Day 4  | [`docs/day-4/README.md`](./docs/day-4/README.md) |
+| Day 5  | [`docs/day-5/README.md`](./docs/day-5/README.md) |
 
 ---
 
