@@ -2,7 +2,9 @@
 
 > Avalanche Indonesia Short Course – **Day 3**
 
-Hari ketiga difokuskan pada **Frontend Layer**: bagaimana **Next.js** berinteraksi dengan **wallet** dan **smart contract** yang sudah dideploy di Day 2.
+Hari ketiga difokuskan pada **Frontend Layer**: bagaimana **Next.js** berinteraksi dengan **wallet** dan **smart contract** yang sudah dideploy pada Day 2.
+
+Frontend bertugas sebagai **UI & UX layer**, bukan tempat logic bisnis.
 
 ---
 
@@ -14,7 +16,7 @@ Pada akhir sesi Day 3, peserta mampu:
 - Memahami **mental model frontend Web3**
 - Menggunakan **Next.js (App Router)** untuk dApp
 - Menghubungkan frontend dengan wallet menggunakan **Reown**
-- Alternatif: memahami pendekatan **Thirdweb**
+- Memahami alternatif wallet framework (**Thirdweb**)
 - Load **ABI & contract address**
 - Melakukan **read (call)** ke smart contract
 - Melakukan **write (transaction)** via wallet
@@ -30,9 +32,10 @@ Frontend pada Day 3 berfungsi sebagai:
 
 - UI interaksi user
 - Penghubung wallet ↔ smart contract
-- State management UX (loading, error, success)
+- State management UX transaksi
 
-📌 Frontend **tidak menyimpan logic bisnis** dan **tidak menyimpan state penting**.
+📌 **Frontend tidak menyimpan logic bisnis**
+📌 **Frontend tidak menyimpan state penting**
 
 Smart contract tetap menjadi **single source of truth**.
 
@@ -40,11 +43,11 @@ Smart contract tetap menjadi **single source of truth**.
 
 ## ⏱️ Struktur Sesi (± 3 Jam)
 
-| Sesi    | Durasi | Aktivitas                            |
-| ------- | ------ | ------------------------------------ |
-| Theory  | 1 Jam  | Frontend Web3 & Wallet Framework     |
-| Demo    | 1 Jam  | Integrasi Next.js + Reown + Contract |
-| Praktik | 1 Jam  | Read & Write Contract Mandiri        |
+| Sesi    | Durasi | Aktivitas                        |
+| ------- | ------ | -------------------------------- |
+| Theory  | 1 Jam  | Frontend Web3 & Wallet Framework |
+| Demo    | 1 Jam  | Next.js + Reown + Smart Contract |
+| Praktik | 1 Jam  | Read & Write Contract Mandiri    |
 
 ---
 
@@ -78,11 +81,11 @@ Blockchain (Avalanche C-Chain)
 Frontend (update UI)
 ```
 
-📌 Perbedaan besar dengan Web2:
+Perbedaan utama dengan Web2:
 
 - Tidak ada session
 - Tidak ada password
-- Semua aksi write = transaksi
+- Semua aksi write = transaksi blockchain
 
 ---
 
@@ -103,23 +106,23 @@ Next.js dipilih karena:
 
 - React-based & production-ready
 - App Router modern
-- Mudah state management
-- Populer di ekosistem Web3
+- State management fleksibel
+- Banyak digunakan di ekosistem Web3
 
-📌 Di Day 1 kita pakai **plain HTML**
-📌 Mulai Day 3 kita pakai **framework frontend**
+📌 Day 1: plain HTML
+📌 Day 3: framework frontend modern
 
 ---
 
 ## 1.5 Wallet Framework di Frontend
 
-Mengelola wallet **manual (`window.ethereum`)** di Next.js itu:
+Mengelola wallet manual (`window.ethereum`) di Next.js:
 
 - Repetitif
 - Error-prone
 - Sulit handle multi-wallet
 
-Solusinya: **Wallet Framework**
+Solusi: **Wallet Framework**
 
 ---
 
@@ -132,16 +135,16 @@ Solusinya: **Wallet Framework**
 - Wallet connection
 - WalletConnect v2
 - Multi-wallet support
-- UX & state management
+- Wallet & connection state management
 
-### Kenapa Reown?
+**Kenapa Reown?**
 
 - Standar industri (WalletConnect ecosystem)
 - Cocok untuk production
-- Tidak mengunci ke vendor tertentu
-- Mudah integrasi dengan Core Wallet
+- Tidak vendor-locked
+- Native support Core Wallet
 
-📌 **Reown menjadi default di course ini**
+➡️ **Reown adalah default wallet framework di course ini**
 
 ---
 
@@ -156,28 +159,52 @@ Thirdweb menyediakan:
 - UI components
 - Infra end-to-end
 
-📌 Kelebihan:
+**Kelebihan**
 
 - Cepat untuk prototyping
 - Banyak abstraction
 
-📌 Kekurangan:
+**Kekurangan**
 
-- Lebih “opinionated”
+- Lebih opinionated
 - Lebih vendor-dependent
 
-➡️ **Dipakai sebagai referensi tambahan, bukan default**
+➡️ Digunakan sebagai **referensi**, bukan default.
 
 ---
 
 ## 1.8 Read vs Write di Frontend
 
-| Action | Cara        | Wallet |
-| ------ | ----------- | ------ |
-| Read   | `call`      | ❌     |
-| Write  | transaction | ✅     |
+| Action | Cara        | Wallet Popup |
+| ------ | ----------- | ------------ |
+| Read   | `call`      | ❌           |
+| Write  | transaction | ✅           |
 
-📌 Write **selalu** memicu wallet popup.
+Mental model:
+
+```text
+Read:
+Frontend → RPC → Blockchain → Frontend
+
+Write:
+Frontend → Wallet → User Sign → Tx Pending → Confirmed
+```
+
+---
+
+## 1.9 Frontend Web3 – Common Pitfalls
+
+Hal penting yang perlu diingat:
+
+- Wallet bisa:
+
+  - Reject transaction
+  - Ganti network kapan saja
+
+- Transaction tidak instant
+- Refresh page ≠ reset blockchain state
+- Tx revert → gas tetap terpakai
+- Jangan blocking UI saat tx pending
 
 ---
 
@@ -203,17 +230,18 @@ http://localhost:3000
 
 Langkah umum:
 
-- Setup WalletConnect Project ID
-- Bungkus app dengan provider Reown
+- Buat WalletConnect Project ID
+- Setup Reown provider
 - Aktifkan Avalanche Fuji
+- Bungkus Next.js app dengan provider
 
-📌 Detail konfigurasi akan dijelaskan di demo live.
+📌 Detail teknis dijelaskan saat demo live.
 
 ---
 
 ## 2.3 Connect Wallet (Core Wallet)
 
-Yang didemokan:
+Demo mencakup:
 
 - Tombol **Connect Wallet**
 - Connect via Core Wallet
@@ -232,8 +260,10 @@ Data dari Day 2:
 Frontend akan:
 
 - Load ABI
-- Instantiate contract
-- Siap untuk call & transaction
+- Membuat contract instance
+- Siap melakukan read & write
+
+📌 Library EVM: **ethers.js / viem**
 
 ---
 
@@ -242,7 +272,7 @@ Frontend akan:
 Demo:
 
 - Panggil `getValue()`
-- Tampilkan value di UI
+- Tampilkan value ke UI
 - Tidak memicu wallet popup
 
 ---
@@ -258,24 +288,24 @@ Demo:
 
   - Loading
   - Success
-  - Error / Revert
+  - Error / revert
 
 ---
 
-## 2.7 Event & UX Feedback
+## 2.7 Transaction UX Feedback
 
 Ditampilkan:
 
 - Transaction hash
 - Status pending
 - Status confirmed
-- Error message jika revert
+- Error message jika gagal
 
 ---
 
 # 3️⃣ Praktik / Homework (1 Jam)
 
-## 🎯 Objective Praktik
+## 🎯 Objective
 
 Peserta mampu **menghubungkan frontend Next.js ke smart contract secara mandiri**.
 
@@ -310,9 +340,19 @@ Implementasikan:
 ## 3.4 Task 4 – UX Improvement (Opsional)
 
 - Disable button saat tx pending
-- Shorten address
+- Shorten wallet address
 - Toast / alert status transaksi
 - Refresh value setelah tx success
+
+---
+
+## 3.5 Task 5 – Failure Handling (Opsional)
+
+Handle kasus:
+
+- User reject transaction
+- Wrong network
+- Transaction revert
 
 ---
 
@@ -336,14 +376,19 @@ Pada akhir Day 3:
 - Peserta memahami:
 
   - Frontend Web3 ≠ Web2
-  - Wallet flow & UX transaksi
+  - Wallet & transaction flow
+  - UX transaksi blockchain
   - Contract sebagai source of truth
 
 ---
 
 ## 🚀 Preview Day 4
 
-Di Day 4, kita akan fokus pada:
+Di Day 4, kita akan menjawab pertanyaan:
+
+> **“Bagaimana membuat dApp terasa cepat & Web2-like padahal pakai blockchain?”**
+
+Fokus Day 4:
 
 - Event listening
 - Indexing & data query
@@ -361,5 +406,5 @@ Di Day 4, kita akan fokus pada:
 
 ---
 
-🔥 **Frontend connected!**
-Besok kita tingkatkan ke **UX, event, dan production-ready dApp** 🚀
+🔥 **Frontend connected.**
+Saatnya naik level ke **UX & production-ready dApp** 🚀
