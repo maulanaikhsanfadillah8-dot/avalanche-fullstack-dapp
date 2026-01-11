@@ -279,6 +279,7 @@ Implementasikan:
 Tampilkan di UI:
 
 - Wallet address
+- Balances
 - Network name
 - Connection status
 - Tambahkan nama lengkap dan NIM kalian sebagai peserta setelah wallet address (WAJIB)
@@ -300,6 +301,7 @@ Tampilkan di UI:
 
 ## 🧪 Checklist Praktik
 
+- [ ] Memiliki akun di builder hub Avalanche https://build.avax.network/login
 - [ ] Core wallet terinstall
 - [ ] Avalanche Fuji Testnet aktif
 - [ ] Frontend berjalan
@@ -315,7 +317,7 @@ Tampilkan di UI:
 Pada akhir Day 1:
 
 - Frontend bisa connect ke Core Wallet
-- Wallet address tampil di UI
+- Wallet address dan balances tampil di UI
 - Network Avalanche Fuji Testnet terdeteksi
 - Peserta memahami alur dasar dApp
 - Template siap lanjut Day 2
@@ -343,6 +345,12 @@ Di Day 2, kita akan:
 ## Post-Test
 
 [Link](https://forms.gle/x2bzfVa7wjNj2j4s6)
+
+---
+
+## Feedback
+
+[Link](https://forms.gle/T9JtUm2L1EK5XZLK7)
 
 ---
 
