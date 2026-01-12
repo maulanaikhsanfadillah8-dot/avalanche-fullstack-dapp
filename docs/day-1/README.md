@@ -181,7 +181,7 @@ Avalanche adalah **high-performance blockchain** dengan:
 
 Alternatif:
 
-- Chainlist
+- [Chainlist](https://chainlist.org/)
 - Manual configuration:
 
 ```bash
@@ -308,7 +308,7 @@ Tampilkan di UI:
 - [ ] Wallet bisa connect
 - [ ] Network terdeteksi dengan benar
 
-[Submission Link](https://forms.gle/bs6UtUejoe3Yupv9A) aktif selama 48 jam
+[Submission Link](https://forms.gle/bs6UtUejoe3Yupv9A) aktif selama 48 jam, deadline Tanggal 14 Jan 2026 pukul 23.59 WIB
 
 ---
 
