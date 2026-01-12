@@ -155,10 +155,10 @@ cd avalanche-fullstack-dapp
 
 Pastikan sudah terinstall:
 
-- Node.js ≥ 22
-- npm / yarn / pnpm
-- Core Wallet
-- Git
+- Git [link](https://git-scm.com/install/)
+- Node.js ≥ 22 [link](https://nodejs.org/en/download)
+- npm / yarn / pnpm (bagian dari no. 1)
+- Core Wallet [link](https://core.app/download) download bagian chrome extension
 
 ---
 
