@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  max-width: 420px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 30px;
+}
+
+.subtitle {
+  color: #cfd8dc;
+  margin-bottom: 24px;
+}
+
+.btn-red,
+.btn-green {
+  width: 100%;
+  padding: 14px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-red {
+  background: #e53935;
+}
+
+.btn-red:hover {
+  background: #d32f2f;
+}
+
+.btn-green {
+  background: #4caf50;
+}
+
+.btn-green:hover {
+  background: #43a047;
+}
+
+.card {
+  margin-top: 24px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  text-align: left;
+  color: white;
+}
+
+.info-grid p {
+  margin: 10px 0;
+  font-size: 14.5px;
+}
+
+/* STATUS */
+.status {
+  font-weight: bold;
+}
+
+.status-connected {
+  color: #4caf50;
+}
+
+.status-disconnected {
+  color: #f44336;
+}
+
+.status-warning {
+  color: #ffeb3b;
+}
